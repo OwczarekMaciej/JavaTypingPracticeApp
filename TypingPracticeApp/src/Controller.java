@@ -60,18 +60,15 @@ public class Controller implements Initializable{
         if(newFile.length() == 0)
         {
             try {
-                app.changeScene("popup.fxml");
+                app.changeScene("CreateAccount.fxml");
                 
             } catch (Exception e) {
                 e.printStackTrace();
-                // TODO: handle exception
             }
         }
         else
         {
-            app.changeScene("practicescene.fxml");
+            app.changeScene("practice.fxml");
         }
-
-    }
-    
+    } 
 }

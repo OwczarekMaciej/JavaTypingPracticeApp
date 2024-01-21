@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@scene.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Label id="welcomeLbl" fx:id="welcomeLbl" layoutX="327.0" layoutY="158.0" text="Ready To Start?" textFill="WHITE">
+      <Label id="welcomeLbl" fx:id="welcomeLbl" layoutX="359.0" layoutY="149.0" text="Ready To Start?" textFill="WHITE">
          <font>
             <Font name="System Bold" size="47.0" />
          </font>
@@ -57,7 +57,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Label fx:id="usernameLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="294.0" layoutY="68.0" prefHeight="69.0" prefWidth="413.0" text="Hi" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="usernameLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="298.0" layoutY="70.0" prefHeight="69.0" prefWidth="413.0" text="Hello!" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="47.0" />
          </font>
