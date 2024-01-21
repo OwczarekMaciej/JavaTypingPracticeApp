@@ -1,20 +1,38 @@
-import javafx.event.ActionEvent;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
-public class Controller {
-
-    @FXML
-    private Label textLbl;
+public class Controller implements Initializable{
 
     @FXML
-    private TextField tfType;
+    private AnchorPane mainPane;
 
     @FXML
-    void onBtnClick(ActionEvent event) {
-        String text = tfType.getText();
-        textLbl.setText(text);
+    private Button startBtn;
+
+    @FXML
+    private Text time;
+
+    @FXML
+    private Text total;
+
+    @FXML
+    private Label welcomeLbl;
+
+    @FXML
+    private Text wpm;
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        
     }
 
+
+    
 }

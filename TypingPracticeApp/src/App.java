@@ -1,19 +1,20 @@
-import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("mainscene.fxml"));
         Parent root = loader.load();
-        Controller controller = loader.getController();
-        //controller.setMainWindow(primaryStage);
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 600, 600));
+        primaryStage.setTitle("Typing Practice");
+        primaryStage.setScene(new Scene(root, 1000, 600));
+        primaryStage.setResizable(false);
+        primaryStage.getIcons().add(new Image("images/icon.png"));
         primaryStage.show();
     }
 
