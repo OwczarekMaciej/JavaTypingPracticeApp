@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -6,9 +8,12 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class App extends Application {
+
+    private static Stage stage;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        stage = primaryStage;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("mainscene.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("Typing Practice");
@@ -16,6 +21,12 @@ public class App extends Application {
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image("images/icon.png"));
         primaryStage.show();
+    }
+
+    public void changeScene(String fxml) throws IOException{
+        FXMLLoader sceneLoader = new FXMLLoader(getClass().getResource(fxml));
+        Parent pane = sceneLoader.load();
+        stage.getScene().setRoot(pane);
     }
 
     public static void main(String[] args) {
