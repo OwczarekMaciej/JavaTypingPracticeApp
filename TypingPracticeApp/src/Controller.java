@@ -68,7 +68,7 @@ public class Controller implements Initializable{
         }
         else
         {
-            app.changeScene("practice.fxml");
+            app.changeScene("practicescene.fxml");
         }
     } 
 }

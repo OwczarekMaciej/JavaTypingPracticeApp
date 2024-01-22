@@ -52,7 +52,7 @@
             <Font size="60.0" />
          </font>
       </Text>
-      <Text fx:id="time" fill="WHITE" layoutX="653.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL TIME SPENT" textAlignment="CENTER" wrappingWidth="138.318359375">
+      <Text fx:id="time" fill="WHITE" layoutX="646.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL TIME SPENT (sec)" textAlignment="CENTER" wrappingWidth="153.7932154989203">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
