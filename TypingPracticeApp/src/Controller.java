@@ -1,14 +1,15 @@
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.text.FieldPosition;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -17,6 +18,9 @@ public class Controller implements Initializable{
 
     @FXML
     private AnchorPane mainPane;
+
+    @FXML
+    private ComboBox<String> lengthCb;
 
     @FXML
     private Button startBtn;
@@ -49,6 +53,7 @@ public class Controller implements Initializable{
             String username = reader.nextLine();
             usernameLbl.setText("Hi " + username + "!");
         }
+        lengthCb.setItems(FXCollections.observableArrayList("15", "30", "60"));
         
         int[] statistics = FileHandler.sumUpNumbers("src/records");
         total.setText(String.valueOf(statistics[0]));

@@ -1,13 +1,13 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\mmaci\\Desktop\\javafx-sdk-21.0.2\\lib\\javafx.base.jar",
-        "c:\\Users\\mmaci\\Desktop\\javafx-sdk-21.0.2\\lib\\javafx.controls.jar",
-        "c:\\Users\\mmaci\\Desktop\\javafx-sdk-21.0.2\\lib\\javafx.fxml.jar",
-        "c:\\Users\\mmaci\\Desktop\\javafx-sdk-21.0.2\\lib\\javafx.graphics.jar",
-        "c:\\Users\\mmaci\\Desktop\\javafx-sdk-21.0.2\\lib\\javafx.media.jar",
-        "c:\\Users\\mmaci\\Desktop\\javafx-sdk-21.0.2\\lib\\javafx.swing.jar",
-        "c:\\Users\\mmaci\\Desktop\\javafx-sdk-21.0.2\\lib\\javafx.web.jar",
-        "c:\\Users\\mmaci\\Desktop\\javafx-sdk-21.0.2\\lib\\javafx-swt.jar"
+        "/Users/maciek/Downloads/javafx-sdk-21.0.2/lib/javafx.fxml.jar",
+        "/Users/maciek/Downloads/javafx-sdk-21.0.2/lib/javafx-swt.jar",
+        "/Users/maciek/Downloads/javafx-sdk-21.0.2/lib/javafx.media.jar",
+        "/Users/maciek/Downloads/javafx-sdk-21.0.2/lib/javafx.graphics.jar",
+        "/Users/maciek/Downloads/javafx-sdk-21.0.2/lib/javafx.swing.jar",
+        "/Users/maciek/Downloads/javafx-sdk-21.0.2/lib/javafx.web.jar",
+        "/Users/maciek/Downloads/javafx-sdk-21.0.2/lib/javafx.controls.jar",
+        "/Users/maciek/Downloads/javafx-sdk-21.0.2/lib/javafx.base.jar"
     ]
 }
