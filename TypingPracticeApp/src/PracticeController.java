@@ -29,8 +29,8 @@ public class PracticeController implements Initializable{
     private int isPracticeStarted = 0;
     private int correctCounter = 0;
     private int countAll = 0;
-    private int timer = 15;
-    private int practiceTime = timer;
+    private int timer;
+    private int practiceTime;
 
     ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
@@ -91,6 +91,13 @@ public class PracticeController implements Initializable{
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public void setSelectedTime(int selectedTime) {
+        this.timer = selectedTime;
+        practiceTime = timer;
+        timeLeft.setText(String.valueOf(timer));
     }
 
     @FXML

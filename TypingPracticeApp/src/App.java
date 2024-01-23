@@ -29,6 +29,14 @@ public class App extends Application {
         stage.getScene().setRoot(pane);
     }
 
+    public void showPracticeScene(int selectedTime) throws IOException {
+        FXMLLoader sceneLoader = new FXMLLoader(getClass().getResource("practicescene.fxml"));
+        Parent pane = sceneLoader.load();
+        stage.getScene().setRoot(pane);
+        PracticeController practiceController = sceneLoader.getController();
+        practiceController.setSelectedTime(selectedTime);
+    }
+
     public static void main(String[] args) {
         launch(args);
     }

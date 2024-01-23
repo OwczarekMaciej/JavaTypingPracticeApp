@@ -15,7 +15,7 @@
             <Font name="System Bold" size="47.0" />
          </font>
       </Label>
-      <Button fx:id="startBtn" layoutX="414.0" layoutY="300.0" mnemonicParsing="false" onAction="#startTyping" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: #FFFFFF;" text="START">
+      <Button fx:id="startBtn" layoutX="418.0" layoutY="264.0" mnemonicParsing="false" onAction="#startTyping" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: #FFFFFF;" text="START">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -63,6 +63,11 @@
             <Font name="System Bold" size="47.0" />
          </font>
       </Label>
-      <ComboBox fx:id="lengthCb" layoutX="397.0" layoutY="255.0" prefHeight="26.0" prefWidth="214.0" promptText="choose the length" />
+      <ComboBox fx:id="lengthCb" layoutX="428.0" layoutY="358.0" prefHeight="17.0" prefWidth="153.0" />
+      <Text fill="WHITE" layoutX="421.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select length of a practice" textAlignment="CENTER" wrappingWidth="168.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

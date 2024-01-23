@@ -54,6 +54,7 @@ public class Controller implements Initializable{
             usernameLbl.setText("Hi " + username + "!");
         }
         lengthCb.setItems(FXCollections.observableArrayList("15", "30", "60"));
+        lengthCb.getSelectionModel().selectFirst();
         
         int[] statistics = FileHandler.sumUpNumbers("src/records");
         total.setText(String.valueOf(statistics[0]));
@@ -75,7 +76,11 @@ public class Controller implements Initializable{
         }
         else
         {
-            app.changeScene("practicescene.fxml");
+            app.showPracticeScene(getSelectedTime());
         }
-    } 
+    }
+
+    public int getSelectedTime() {
+        return Integer.parseInt(lengthCb.getValue());
+    }
 }
