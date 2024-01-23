@@ -45,12 +45,15 @@ public class Controller implements Initializable{
             try {
                 reader = new Scanner(userFile);
             } catch (Exception e) {
-                e.printStackTrace();
             }
             String username = reader.nextLine();
             usernameLbl.setText("Hi " + username + "!");
         }
         
+        int[] statistics = FileHandler.sumUpNumbers("src/records");
+        total.setText(String.valueOf(statistics[0]));
+        wpm.setText(String.valueOf(Math.round(statistics[1] * 60.0/statistics[2])));
+        time.setText(String.valueOf(statistics[2]));
     }
 
     public void startTyping(ActionEvent event) throws IOException{
@@ -63,7 +66,6 @@ public class Controller implements Initializable{
                 app.changeScene("CreateAccount.fxml");
                 
             } catch (Exception e) {
-                e.printStackTrace();
             }
         }
         else

@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@scene.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Label id="welcomeLbl" fx:id="welcomeLbl" layoutX="359.0" layoutY="149.0" text="Ready To Start?" textFill="WHITE">
+      <Label id="welcomeLbl" fx:id="welcomeLbl" layoutX="332.0" layoutY="147.0" text="Ready To Start?" textFill="WHITE">
          <font>
             <Font name="System Bold" size="47.0" />
          </font>
@@ -37,27 +37,27 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Text fx:id="total" fill="WHITE" layoutX="268.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+      <Text fx:id="total" fill="WHITE" layoutX="228.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="110.34375">
          <font>
             <Font size="60.0" />
          </font>
       </Text>
-      <Text fx:id="wpm" fill="WHITE" layoutX="485.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+      <Text fx:id="wpm" fill="WHITE" layoutX="423.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="153.7932154989203">
          <font>
             <Font size="60.0" />
          </font>
       </Text>
-      <Text fx:id="time" fill="WHITE" layoutX="706.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+      <Text fx:id="time" fill="WHITE" layoutX="638.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="168.0">
          <font>
             <Font size="60.0" />
          </font>
       </Text>
-      <Text fx:id="time" fill="WHITE" layoutX="646.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL TIME SPENT (sec)" textAlignment="CENTER" wrappingWidth="153.7932154989203">
+      <Text fill="WHITE" layoutX="646.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL TIME SPENT (sec)" textAlignment="CENTER" wrappingWidth="153.7932154989203">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Label fx:id="usernameLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="298.0" layoutY="70.0" prefHeight="69.0" prefWidth="413.0" text="Hello!" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="usernameLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="294.0" layoutY="66.0" prefHeight="69.0" prefWidth="413.0" text="Hello!" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="47.0" />
          </font>

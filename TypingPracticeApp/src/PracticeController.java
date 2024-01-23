@@ -1,10 +1,13 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -23,10 +26,23 @@ import javafx.scene.text.Text;
 
 public class PracticeController implements Initializable{
     
+    private int isPracticeStarted = 0;
+    private int correctCounter = 0;
+    private int countAll = 0;
+    private int timer = 15;
+    private int practiceTime = timer;
+
+    ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+
+    ArrayList<String> words = new ArrayList<>();
+    private int wordCounter = 0;
+
+    private File saveData;
+
     @FXML
     private Text accuracy; 
     @FXML
-    private Text wpm;
+    private Text correctWordsTxt;
     @FXML
     private Text timeLeft;
 
@@ -49,67 +65,39 @@ public class PracticeController implements Initializable{
     @FXML
     private TextField practiceTf;
 
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        playAgainBtn.setVisible(false);
+        playAgainBtn.setDisable(true);
+        timeLeft.setText(String.valueOf(timer));
+        addWords();
+        Collections.shuffle(words);
+        currentWordTxt.setText(words.get(wordCounter));
+        nextWordTxt.setText(words.get(wordCounter + 1));
+        wordCounter++;
+
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
+        saveData = new File("src/records/" + format.format(date).strip() + ".txt");
+        
+        try {
+            if(saveData.createNewFile())
+            {
+                System.out.println("File " + saveData.getName() + "created");
+            }
+            else{
+                System.out.println("File already exists");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void playAgainBtn(ActionEvent event) throws IOException{
         App app = new App();
         app.changeScene("mainscene.fxml");
-
     }
-
-    Runnable showWrongImg = new Runnable() {
-        @Override
-        public void run() {
-            wrongIv.setOpacity(0);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            wrongIv.setOpacity(50);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            wrongIv.setOpacity(100);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            wrongIv.setOpacity(0);
-        }
-    };
-
-    Runnable showCorrectImg = new Runnable() {
-        @Override
-        public void run() {
-            correctIv.setOpacity(100);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            correctIv.setOpacity(50);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            correctIv.setOpacity(100);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            correctIv.setOpacity(0);
-        }
-    };
-
-    private int isPracticeStarted = 0;
-    private int correctCounter = 0;
-    private int countAll = 0;
 
     @FXML
     void startPractice(KeyEvent event) {
@@ -127,8 +115,7 @@ public class PracticeController implements Initializable{
 
             if (userWord.equals(realWord)) {
                 correctCounter++;
-                wpm.setText(String.format("%.1f", correctCounter * 60.0 / timeSpent));
-
+                correctWordsTxt.setText(String.valueOf(correctCounter));
 
                 Thread t = new Thread(showCorrectImg);
                 t.start();
@@ -147,8 +134,6 @@ public class PracticeController implements Initializable{
 
     }
 
-    ArrayList<String> words = new ArrayList<>();
-    private int wordCounter = 0;
 
     public void addWords()
     {
@@ -167,23 +152,6 @@ public class PracticeController implements Initializable{
         }
     }
 
-    private int timer = 60;
-    private int timeSpent = 0;
-
-    ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-        playAgainBtn.setVisible(false);
-        playAgainBtn.setDisable(true);
-        timeLeft.setText(String.valueOf(timer));
-        addWords();
-        Collections.shuffle(words);
-        currentWordTxt.setText(words.get(wordCounter));
-        nextWordTxt.setText(words.get(wordCounter + 1));
-        wordCounter++;
-
-    }
 
     Runnable practiceLogic = new Runnable() {
         @Override
@@ -191,7 +159,6 @@ public class PracticeController implements Initializable{
             if (timer > -1) {
                 timeLeft.setText(String.valueOf(timer));
                 timer -= 1;
-                timeSpent++;
             }
 
             else {
@@ -199,15 +166,15 @@ public class PracticeController implements Initializable{
                     practiceTf.setDisable(true);
                     practiceTf.setText("The time is over");
 
-                    // try {
-                    //     FileWriter myWriter = new FileWriter(saveData);
-                    //     myWriter.write(countAll +";");
-                    //     myWriter.write(counter +";");
-                    //     myWriter.write(String.valueOf(countAll-counter));
-                    //     myWriter.close();
-                    // } catch (IOException e) {
-                    //     e.printStackTrace();
-                    // }
+                    try {
+                        FileWriter myWriter = new FileWriter(saveData);
+                        myWriter.write(countAll +";");
+                        myWriter.write(correctCounter +";");
+                        myWriter.write(String.valueOf(practiceTime));
+                        myWriter.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                     playAgainBtn.setVisible(true);
                     playAgainBtn.setDisable(false);
@@ -218,5 +185,49 @@ public class PracticeController implements Initializable{
         }
     };
 
+
+    Runnable showWrongImg = new Runnable() {
+        @Override
+        public void run() {
+            wrongIv.setOpacity(0);
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+            }
+            wrongIv.setOpacity(50);
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {          
+            }
+            wrongIv.setOpacity(100);
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+            }
+            wrongIv.setOpacity(0);
+        }
+    };
+
+    Runnable showCorrectImg = new Runnable() {
+        @Override
+        public void run() {
+            correctIv.setOpacity(100);
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+            }
+            correctIv.setOpacity(50);
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+            }
+            correctIv.setOpacity(100);
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+            }
+            correctIv.setOpacity(0);
+        }
+    };
     
 }

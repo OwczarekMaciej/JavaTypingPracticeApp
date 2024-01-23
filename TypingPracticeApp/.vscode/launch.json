@@ -15,8 +15,8 @@
             "name": "App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "TypingPracticeApp_f570bd51",
-            "vmArgs": "--module-path /Users/maciek/Downloads/javafx-sdk-21.0.2/lib --add-modules javafx.controls,javafx.fxml"
+            "projectName": "TypingPracticeApp_e0bdc1f9",
+            "vmArgs": "--module-path \"C:/Users/mmaci/Desktop/javafx-sdk-21.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
