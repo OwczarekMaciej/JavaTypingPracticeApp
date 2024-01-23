@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@scene.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateAccountController">
    <children>
       <Label alignment="CENTER" layoutX="143.0" layoutY="73.0" lineSpacing="5.0" prefHeight="214.0" prefWidth="719.0" text="It looks like it's your first time using Typing Practice" textAlignment="CENTER" textFill="WHITE" wrapText="true">
@@ -19,7 +18,7 @@
             <Font size="22.0" />
          </font>
       </TextField>
-      <Button fx:id="setNameBtn" layoutX="423.0" layoutY="419.0" mnemonicParsing="false" onAction="#setUsername" prefHeight="40.0" prefWidth="157.0" text="SUBMIT">
+      <Button fx:id="setNameBtn" layoutX="423.0" layoutY="419.0" mnemonicParsing="false" onAction="#setUsername" prefHeight="40.0" prefWidth="157.0" stylesheets="@scene.css" text="SUBMIT">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

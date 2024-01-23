@@ -16,7 +16,7 @@
             <Font size="26.0" />
          </font>
       </TextField>
-      <Button fx:id="playAgainBtn" layoutX="414.0" layoutY="528.0" mnemonicParsing="false" onAction="#playAgainBtn" prefHeight="53.0" prefWidth="175.0" text="PLAY AGAIN">
+      <Button fx:id="playAgainBtn" layoutX="414.0" layoutY="528.0" mnemonicParsing="false" onAction="#playAgainBtn" prefHeight="53.0" prefWidth="175.0" stylesheets="@scene.css" text="PLAY AGAIN">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>

@@ -54,7 +54,7 @@ public class Controller implements Initializable{
             usernameLbl.setText("Hi " + username + "!");
         }
         lengthCb.setItems(FXCollections.observableArrayList("15", "30", "60"));
-        lengthCb.getSelectionModel().selectFirst();
+        lengthCb.getSelectionModel().selectLast();
         
         int[] statistics = FileHandler.sumUpNumbers("src/records");
         total.setText(String.valueOf(statistics[0]));

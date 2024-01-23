@@ -10,12 +10,12 @@
 
 <AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@scene.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Label id="welcomeLbl" fx:id="welcomeLbl" layoutX="332.0" layoutY="147.0" text="Ready To Start?" textFill="WHITE">
+      <Label id="welcomeLbl" fx:id="welcomeLbl" layoutX="327.0" layoutY="122.0" text="Ready To Start?" textFill="WHITE">
          <font>
             <Font name="System Bold" size="47.0" />
          </font>
       </Label>
-      <Button fx:id="startBtn" layoutX="418.0" layoutY="264.0" mnemonicParsing="false" onAction="#startTyping" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: #FFFFFF;" text="START">
+      <Button fx:id="startBtn" layoutX="418.0" layoutY="241.0" mnemonicParsing="false" onAction="#startTyping" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: #FFFFFF;" stylesheets="@scene.css" text="START">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -58,13 +58,13 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <Label fx:id="usernameLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="294.0" layoutY="66.0" prefHeight="69.0" prefWidth="413.0" text="Hello!" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="usernameLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="295.0" layoutY="45.0" prefHeight="69.0" prefWidth="413.0" text="Hello!" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="47.0" />
          </font>
       </Label>
-      <ComboBox fx:id="lengthCb" layoutX="428.0" layoutY="358.0" prefHeight="17.0" prefWidth="153.0" />
-      <Text fill="WHITE" layoutX="421.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select length of a practice" textAlignment="CENTER" wrappingWidth="168.0">
+      <ComboBox fx:id="lengthCb" layoutX="429.0" layoutY="331.0" prefHeight="17.0" prefWidth="153.0" stylesheets="@scene.css" visibleRowCount="3" />
+      <Text fill="WHITE" layoutX="422.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select length of a practice" textAlignment="CENTER" wrappingWidth="168.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

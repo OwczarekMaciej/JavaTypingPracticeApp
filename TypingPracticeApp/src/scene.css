@@ -1,3 +1,33 @@
 #mainPane{
     -fx-background-color: linear-gradient(to bottom, #111111, #4e19c9a1)
 } 
+
+
+#lengthCb{
+    -fx-border-width: 0.5px;
+    -fx-border-color: #ACACAC;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-font-size : 15px;
+    -fx-padding: 0px;
+    -fx-font-weight: 700;
+    
+}
+
+#startBtn
+{
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+}
+
+#setNameBtn
+{
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+}
+
+#playAgainBtn
+{
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+}
