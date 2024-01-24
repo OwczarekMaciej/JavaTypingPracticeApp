@@ -15,7 +15,7 @@
             <Font name="System Bold" size="47.0" />
          </font>
       </Label>
-      <Button fx:id="startBtn" layoutX="418.0" layoutY="241.0" mnemonicParsing="false" onAction="#startTyping" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: #FFFFFF;" stylesheets="@scene.css" text="START">
+      <Button fx:id="startBtn" layoutX="418.0" layoutY="241.0" mnemonicParsing="false" onAction="#startPractice" prefHeight="53.0" prefWidth="175.0" style="-fx-background-color: #FFFFFF;" stylesheets="@scene.css" text="START">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>

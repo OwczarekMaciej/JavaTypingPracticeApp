@@ -72,9 +72,7 @@ public class PracticeController implements Initializable{
         timeLeft.setText(String.valueOf(timer));
         addWords();
         Collections.shuffle(words);
-        currentWordTxt.setText(words.get(wordCounter));
-        nextWordTxt.setText(words.get(wordCounter + 1));
-        wordCounter++;
+        setWords();
 
         Date date = new Date();
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
@@ -113,20 +111,17 @@ public class PracticeController implements Initializable{
             isPracticeStarted = 1;
             executor.scheduleAtFixedRate(practiceLogic, 0, 1, TimeUnit.SECONDS);
         }
-
-        if (event.getCode().equals(KeyCode.ENTER) && practiceTf.getText().strip() != "") {
+        if (event.getCode().equals(KeyCode.ENTER) && !practiceTf.getText().strip().isEmpty()) {
 
             String userWord = practiceTf.getText().strip();
             String realWord = currentWordTxt.getText();
             countAll++;
-
             if (userWord.equals(realWord)) {
                 correctCounter++;
                 correctWordsTxt.setText(String.valueOf(correctCounter));
 
                 Thread t = new Thread(showCorrectImg);
                 t.start();
-
             }
             else {
                 Thread t = new Thread(showWrongImg);
@@ -134,11 +129,8 @@ public class PracticeController implements Initializable{
             }
             practiceTf.setText("");
             accuracy.setText(String.valueOf(Math.round((correctCounter*1.0/countAll)*100)));
-            currentWordTxt.setText(words.get(wordCounter));
-            nextWordTxt.setText(words.get(wordCounter+1));
-            wordCounter++;
+            setWords();
         }
-
     }
 
 
@@ -157,6 +149,13 @@ public class PracticeController implements Initializable{
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void setWords()
+    {
+        currentWordTxt.setText(words.get(wordCounter));
+        nextWordTxt.setText(words.get(wordCounter+1));
+        wordCounter++;
     }
 
 
@@ -236,5 +235,4 @@ public class PracticeController implements Initializable{
             correctIv.setOpacity(0);
         }
     };
-    
 }

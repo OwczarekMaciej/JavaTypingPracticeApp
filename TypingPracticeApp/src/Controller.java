@@ -62,7 +62,7 @@ public class Controller implements Initializable{
         time.setText(String.valueOf(statistics[2]));
     }
 
-    public void startTyping(ActionEvent event) throws IOException{
+    public void startPractice(ActionEvent event) throws IOException{
         App app = new App();
 
         File newFile = new File("username.txt");
